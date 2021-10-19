@@ -2,7 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+<<<<<<< HEAD
 #include <qevent.h>
+=======
+#include <QMouseEvent>
+#include <QPoint>
+>>>>>>> c889c926649ede570ac315bb57a5c62ecef83df3
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
