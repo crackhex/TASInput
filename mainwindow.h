@@ -16,14 +16,14 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    
+    virtual void mousePressEvent(QMouseEvent* evt);
+    virtual void mouseReleaseEvent(QMouseEvent* evt);
+    virtual void mouseMoveEvent(QMouseEvent* evt);
 
 private:
     Ui::MainWindow *ui;
-
-private:
-    void mousePressEvent(QMouseEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
-    int m_nMouseClick_X_Coordinate;
-    int m_nMouseClick_Y_Coordinate;
+    bool moving;
+    QPoint oldPos;
 };
 #endif // MAINWINDOW_H
