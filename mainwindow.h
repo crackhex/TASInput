@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <qevent.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,8 +15,14 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    
+    virtual void mousePressEvent(QMouseEvent* evt);
+    virtual void mouseReleaseEvent(QMouseEvent* evt);
+    virtual void mouseMoveEvent(QMouseEvent* evt);
 
 private:
     Ui::MainWindow *ui;
+    bool moving;
+    QPoint oldPos;
 };
 #endif // MAINWINDOW_H
