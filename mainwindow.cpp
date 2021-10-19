@@ -11,6 +11,10 @@ MainWindow::MainWindow(QWidget* parent)
   : QMainWindow(parent)
   , ui(new Ui::MainWindow)
 {
+
+    //QCoreApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
+
+
     ui->setupUi(this);
     Qt::WindowFlags wt = Qt::Window;
     #ifdef Q_OS_LINUX
@@ -32,6 +36,7 @@ MainWindow::~MainWindow()
 void
 MainWindow::mousePressEvent(QMouseEvent* evt)
 {
+    if(evt->button() != Qt::LeftButton) return;
     moving = true;
     oldPos = evt->globalPos();
 }
@@ -41,7 +46,6 @@ MainWindow::mouseMoveEvent(QMouseEvent* evt)
 {
     if (moving) {
         const QPoint delta = evt->globalPos() - oldPos;
-        cout << "Moving: (" << delta.x() << ", " << delta.y() << ")\n";
         move(x() + delta.x(), y() + delta.y());
         oldPos = evt->globalPos();
     }

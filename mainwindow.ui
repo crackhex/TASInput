@@ -6,30 +6,247 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>540</width>
+    <height>440</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>MainWindow</string>
+  <property name="minimumSize">
+   <size>
+    <width>540</width>
+    <height>440</height>
+   </size>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <property name="windowTitle">
+   <string>TASInput Qt</string>
+  </property>
+  <widget class="QWidget" name="widget_Container">
    <property name="enabled">
     <bool>true</bool>
    </property>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>531</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QFrame" name="frame_Joystick">
+       <property name="minimumSize">
+        <size>
+         <width>170</width>
+         <height>170</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>170</width>
+         <height>170</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>1</number>
+       </property>
+       <property name="midLineWidth">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_X">
+       <property name="minimumSize">
+        <size>
+         <width>170</width>
+         <height>190</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>170</width>
+         <height>190</height>
+        </size>
+       </property>
+       <property name="title">
+        <string>X</string>
+       </property>
+       <widget class="QSpinBox" name="spinBox_X">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_Y">
+       <property name="minimumSize">
+        <size>
+         <width>170</width>
+         <height>190</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>170</width>
+         <height>190</height>
+        </size>
+       </property>
+       <property name="title">
+        <string>Y</string>
+       </property>
+       <widget class="QSpinBox" name="spinBox_Y">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="enabled">
-    <bool>false</bool>
+  <widget class="QDockWidget" name="dockWidget_Buttons">
+   <property name="features">
+    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
    </property>
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>20</height>
-    </rect>
+   <property name="allowedAreas">
+    <set>Qt::BottomDockWidgetArea|Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
    </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>-1</x>
+       <y>-1</y>
+       <width>541</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout" rowminimumheight="22,22,22,22,22,22,22,22">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <item row="4" column="0">
+       <widget class="QCheckBox" name="checkBox_R">
+        <property name="text">
+         <string>R</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QCheckBox" name="checkBox_A">
+        <property name="text">
+         <string>A</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="checkBox_Z">
+        <property name="text">
+         <string>Z</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="checkBox_B">
+        <property name="text">
+         <string>B</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QCheckBox" name="checkBox_CD">
+        <property name="text">
+         <string>CDown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="checkBox_CR">
+        <property name="text">
+         <string>CRight</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QCheckBox" name="checkBox_DU">
+        <property name="text">
+         <string>DUp</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="checkBox_CL">
+        <property name="text">
+         <string>CLeft</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QCheckBox" name="checkBox_CU">
+        <property name="text">
+         <string>CUp</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QCheckBox" name="checkBox_DD">
+        <property name="text">
+         <string>CDown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="checkBox_L">
+        <property name="text">
+         <string>L</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QCheckBox" name="checkBox_S">
+        <property name="text">
+         <string>Start</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="checkBox_DR">
+        <property name="text">
+         <string>DRight</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="checkBox_DL">
+        <property name="text">
+         <string>DLeft</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>
