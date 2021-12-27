@@ -75,72 +75,20 @@ void MainWindow::setTransformed(bool transformed)
 //! [8]
 void MainWindow::paintEvent(QPaintEvent * /* event */)
 {
-    /*static const QPoint points[4] = {
-        QPoint(10, 80),
-        QPoint(20, 10),
-        QPoint(80, 30),
-        QPoint(90, 70)
-    };*/
 
     QRect rect(10, 10, 80, 80);
 
     QPainterPath path;
 
-  /*  int startAngle = 20 * 16;
-    int arcLength = 120 * 16; */
-//! [8]
-
-//! [9]
     QPainter painter(this);
     painter.setPen(pen);
     painter.setBrush(brush);
     if (antialiased)
         painter.setRenderHint(QPainter::Antialiasing, true);
-//! [9]
 
-//! [10]
-    for (int x = 0; x < width(); x += 250) {
-        for (int y = 0; y < height(); y += 250) {
-            painter.save();
-            painter.translate(x, y);
-            painter.drawRect(rect);
-//! [10] //! [11]
 
-//! [11]
-
-//! [12]
-            switch (shape) {
-            case Line:
-                painter.drawLine(rect.bottomLeft(), rect.topRight());
-                break;
-            case Rect:
-                painter.drawRect(rect);
-                break;
-            case RoundedRect:
-                painter.drawRoundedRect(rect, 25, 25, Qt::RelativeSize);
-                break;
-            case Ellipse:
-                painter.drawEllipse(rect);
-                break;
-          /*  case Arc:
-                painter.drawArc(rect, startAngle, arcLength);
-                break;
-            case Chord:
-                painter.drawChord(rect, startAngle, arcLength);
-                break;
-            case Pie:
-                painter.drawPie(rect, startAngle, arcLength);
-                break; */
-            case Path:
-                painter.drawPath(path);
-                break;
-            case Pixmap:
-                painter.drawPixmap(10, 10, pixmap);
-            }
-//! [12] //! [13]
-            painter.restore();
-        }
-    }
+    painter.save();
+    painter.drawRect(rect);
 
     painter.setRenderHint(QPainter::Antialiasing, false);
     painter.setPen(palette().dark().color());
